@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
+  <persistence-unit name="Pet-ShowPU" transaction-type="RESOURCE_LOCAL">
+    <!-- Implementação do JPA-->
+    <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+    <!-- Lista de classes-->
+    <class>entidades.Usuario</class>
+    <class>entidades.Banho</class>
+    <class>entidades.Administrador</class>
+    <class>entidades.Agendamento</class>
+    <class>entidades.Adestramento</class>
+    <class>entidades.Contato</class>
+    <class>entidades.Pedido</class>
+    <class>entidades.Tosa</class>
+    <class>entidades.Endereco</class>
+    <class>entidades.Passeio</class>
+    <class>entidades.AnimaisAdocao</class>
+    <class>entidades.Produto</class>
+    <class>entidades.AnimaisCadastrados</class>
+    <exclude-unlisted-classes>false</exclude-unlisted-classes>
+    <properties>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://127.0.0.1:3306/pet_show?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.user" value="root"/>
+      <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+      <property name="javax.persistence.jdbc.password" value=""/>
+      <!--<property name="hibernate.cache.provider_class" value="org.hibernate.cache.NoCacheProvider"/>-->
+      <!-- <property name="javax.persistence.schema-generation.database.action" value="create"/>-->
+      <!-- Configurações específicas do Hibernate -->
+      <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5InnoDBDialect"/>
+      <property name="hibernate.hbm2ddl.auto" value="update"/>
+      <!--Mostrar SQL formado-->
+      <property name="hibernate.show_sql" value="true"/>
+      <!--Atualizar SQL formado-->
+      <property name="hibernate.format_sql" value="true"/>
+    </properties>
+  </persistence-unit>
+</persistence>
